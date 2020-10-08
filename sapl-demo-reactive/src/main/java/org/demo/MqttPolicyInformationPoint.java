@@ -53,8 +53,6 @@ import org.springframework.integration.mqtt.support.DefaultPahoMessageConverter;
 import org.springframework.integration.stream.CharacterStreamReadingMessageSource;
 import org.springframework.messaging.MessageHandler;
 
-// hallo
-
 // @NoArgsConstructor
 @Service
 @PolicyInformationPoint(name = MqttPolicyInformationPoint.NAME, description = MqttPolicyInformationPoint.DESCRIPTION)
@@ -84,7 +82,8 @@ public class MqttPolicyInformationPoint {
         this.mqttClientFactory = factory;
         return factory;
     }
-/*
+/* Skizzen - funktioniert alles nicht:
+
     @Bean
     public IntegrationFlow mqttInFlow() {
         LOGGER.info("\nBEAN - mqttInFlow");
@@ -117,7 +116,7 @@ public class MqttPolicyInformationPoint {
     @Attribute(docs = "Emits every x seconds the current UTC date and time as an ISO-8601 string. x is the passed number value.")
     public Flux<Val> ticker(@Number Val value, Map<String, JsonNode> variables) throws AttributeException {
         try {
-            // return Flux.interval(Duration.ofSeconds(value.get().asLong())).map(i -> Val.of(Instant.now().toString()));
+            // gebe einene fixen wert zurück - in der zukunft sollte das der mqtt output sein
             return Flux.interval(Duration.ofSeconds(value.get().asLong())).map(i -> Val.of("2020-10-07T08:34:07.042Z"));
         } catch (Exception e) {
             throw new AttributeException("Exception while creating the next ticker value.", e);
@@ -127,7 +126,7 @@ public class MqttPolicyInformationPoint {
     @Attribute(docs = "Listens to MQTT Broker - TODO: pass server details as parameter.")
     public Flux<Val> channel(@Number Val value, Map<String, JsonNode> variables) throws AttributeException {
         try {
-            // return Flux.interval(Duration.ofSeconds(value.get().asLong())).map(i -> Val.of(Instant.now().toString()));
+            // gebe einene fixen wert zurück - in der zukunft sollte das der mqtt output sein
             return Flux.interval(Duration.ofSeconds(value.get().asLong())).map(i -> Val.of("2020-10-07T08:34:07.042Z"));
         } catch (Exception e) {
             throw new AttributeException("Exception while creating the next ticker value.", e);
