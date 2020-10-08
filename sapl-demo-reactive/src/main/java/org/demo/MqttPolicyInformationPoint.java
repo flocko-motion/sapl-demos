@@ -53,6 +53,7 @@ import org.springframework.integration.mqtt.support.DefaultPahoMessageConverter;
 import org.springframework.integration.stream.CharacterStreamReadingMessageSource;
 import org.springframework.messaging.MessageHandler;
 
+// hallo
 
 // @NoArgsConstructor
 @Service
