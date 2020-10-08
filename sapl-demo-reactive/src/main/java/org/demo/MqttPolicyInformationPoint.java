@@ -54,7 +54,7 @@ import org.springframework.integration.stream.CharacterStreamReadingMessageSourc
 import org.springframework.messaging.MessageHandler;
 
 
-@NoArgsConstructor
+// @NoArgsConstructor
 @Service
 @PolicyInformationPoint(name = MqttPolicyInformationPoint.NAME, description = MqttPolicyInformationPoint.DESCRIPTION)
 public class MqttPolicyInformationPoint {
@@ -65,12 +65,11 @@ public class MqttPolicyInformationPoint {
 
     private static final Log LOGGER = LogFactory.getLog(MqttPolicyInformationPoint.class);
 
-/*
+
     public MqttPolicyInformationPoint() {
         LOGGER.info("\n=mqtt PIP construct !!!!11!!1===");
     }
-*/
-    /*
+
     public MqttPahoClientFactory mqttClientFactory;
     public MqttPahoClientFactory getMqttClientFactory() {
         if(this.mqttClientFactory != null) return this.mqttClientFactory;
@@ -84,7 +83,7 @@ public class MqttPolicyInformationPoint {
         this.mqttClientFactory = factory;
         return factory;
     }
-
+/*
     @Bean
     public IntegrationFlow mqttInFlow() {
         LOGGER.info("\nBEAN - mqttInFlow");
