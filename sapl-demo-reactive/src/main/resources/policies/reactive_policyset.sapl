@@ -13,7 +13,7 @@ permit
 where
   "ROLE_DOCTOR" in subject..authority || "ROLE_NURSE" in subject..authority;
   var interval = 1;
-  time.localSecond(interval.<clock.ticker>) > 4;
+  time.localSecond(interval.<mqtt.ticker>) < 31;
 
 
 policy "permit doctor and nurse read time restricted blood pressure data"
@@ -22,7 +22,7 @@ permit
 where
   "ROLE_DOCTOR" in subject..authority || "ROLE_NURSE" in subject..authority;
   var interval = 1;
-  time.localSecond(interval.<clock.ticker>) < 31 || time.localSecond(interval.<clock.ticker>) > 35;
+  time.localSecond(interval.<mqtt.ticker>) < 31 || time.localSecond(interval.<clock.ticker>) > 35;
 
 
 policy "permit visitor read time restricted heart beat data"
